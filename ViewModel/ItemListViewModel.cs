@@ -5,19 +5,20 @@ using System.Reactive.Linq;
 using DynamicData;
 using ReactiveUI;
 using ReactiveUI.Fody.Helpers;
+using ViewModel.Contract;
 
 namespace ViewModel
 {
-    public class ItemListViewModel : ReactiveObject, IActivatableViewModel
+    public class ItemListViewModel : ReactiveObject, IItemListViewModel
     {
-        private readonly SourceList<ItemViewModel> _items;
-        private readonly ReadOnlyObservableCollection<ItemViewModel> _readOnlyItems;
+        private readonly SourceList<IItemViewModel> _items;
+        private readonly ReadOnlyObservableCollection<IItemViewModel> _readOnlyItems;
 
         public ViewModelActivator Activator { get; } = new ViewModelActivator();
 
         public ItemListViewModel()
         {
-            this._items = new SourceList<ItemViewModel>();
+            this._items = new SourceList<IItemViewModel>();
 
             this._items.Connect()
                        .Bind(out this._readOnlyItems)
@@ -70,6 +71,6 @@ namespace ViewModel
         [Reactive]
         public int ItemCount { get; set; } = 30;
 
-        public ReadOnlyObservableCollection<ItemViewModel> Items => this._readOnlyItems;
+        public ReadOnlyObservableCollection<IItemViewModel> Items => this._readOnlyItems;
     }
 }

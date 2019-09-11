@@ -150,6 +150,10 @@
         <Project>{7231AD3B-A9A0-4756-8B1E-3112CC0F7C1A}</Project>
         <Name>ViewModel</Name>
       </ProjectReference>
+      <ProjectReference Include="..\ViewModel.Contract\ViewModel.Contract.csproj">
+        <Project>{AE6352E9-05AB-49BF-97BB-4648473BD175}</Project>
+        <Name>ViewModel.Contract</Name>
+      </ProjectReference>
     </ItemGroup>
     <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

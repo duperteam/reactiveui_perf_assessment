@@ -3,10 +3,11 @@ using System.Reactive.Disposables;
 using System.Reactive.Linq;
 using ReactiveUI;
 using ReactiveUI.Fody.Helpers;
+using ViewModel.Contract;
 
 namespace ViewModel
 {
-    public class ItemViewModel : ReactiveObject, IActivatableViewModel
+    public class ItemViewModel : ReactiveObject, IItemViewModel
     {
         public ViewModelActivator Activator { get; } = new ViewModelActivator();
 
@@ -26,9 +27,9 @@ namespace ViewModel
         }
 
         [Reactive]
-        public string Title { get; set; }
+        public string Title { get; private set; }
 
         [Reactive]
-        public string Value { get; set; }
+        public string Value { get; private set; }
     }
 }

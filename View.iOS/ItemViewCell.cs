@@ -3,11 +3,11 @@ using System.Reactive.Disposables;
 using Foundation;
 using ReactiveUI;
 using UIKit;
-using ViewModel;
+using ViewModel.Contract;
 
 namespace View.iOS
 {
-    public partial class ItemViewCell : ReactiveTableViewCell<ItemViewModel>
+    public partial class ItemViewCell : ReactiveTableViewCell<IItemViewModel>
     {
         public static readonly NSString Key = new NSString("ItemViewCell");
         public static readonly UINib Nib = UINib.FromName("ItemViewCell", NSBundle.MainBundle);

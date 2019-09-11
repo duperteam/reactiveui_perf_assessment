@@ -3,10 +3,11 @@ using ReactiveUI;
 using System;
 using System.Reactive.Disposables;
 using ViewModel;
+using ViewModel.Contract;
 
 namespace View.iOS
 {
-    public partial class ViewController : ReactiveViewController<ItemListViewModel>
+    public partial class ViewController : ReactiveViewController<IItemListViewModel>
     {
         public ViewController(IntPtr intPtr) : base(intPtr)
         {
